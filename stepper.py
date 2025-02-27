@@ -27,7 +27,7 @@ class Stepper(object):
     def tick(self, forward=True):
         if not self.left:
             forward = not forward
-        step_a = full_step if forward else full_step_r
+        step_a = full_step_r if forward else full_step
         for t in range(4):
             self.ins[t].value(step_a[self._i][t])
         self._i = self._i + 1 if self._i < 3 else 0
